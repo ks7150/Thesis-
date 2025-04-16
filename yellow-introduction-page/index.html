@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yellow Introduction - Thesis Project</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="yellow-intro-page">
+    <div class="yellow-intro-container">
+        <div class="yellow-image-and-arrow">
+            <img id="yellow-art-img" src="" alt="Yellow Artwork" class="yellow-intro-image">
+            <a id="next-art-btn" href="#" class="circle-arrow-btn" title="Next artwork">
+                <span>&#8594;</span>
+            </a>
+        </div>
+        <div class="yellow-intro-text" id="yellow-art-text"></div>
+    </div>
+    <script>
+        // Example data array
+        const artworks = [
+            {
+                img: "../main-indian-art-collecting-guide.jpg",
+                text: `In this painting, the yellow background dominates the scene, acting as a backdrop and a spiritual field of energy and divinity. ...`
+            },
+            {
+                img: "../1.png",
+                text: `This is another yellow artwork with its own description.`
+            },
+            // Add more artworks here...
+        ];
+
+        // Get art index from URL (?art=1, ?art=2, etc.)
+        const params = new URLSearchParams(window.location.search);
+        let artIndex = parseInt(params.get('art')) || 0;
+        if (artIndex < 0 || artIndex >= artworks.length) artIndex = 0;
+
+        // Set image and text
+        document.getElementById('yellow-art-img').src = artworks[artIndex].img;
+        document.getElementById('yellow-art-text').innerHTML = `<p>${artworks[artIndex].text}</p>`;
+
+        // Set next button link
+        const nextIndex = (artIndex + 1) % artworks.length;
+        document.getElementById('next-art-btn').href = `?art=${nextIndex}`;
+    </script>
+</body>
+</html>
