@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blue Art Slider</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <style>
+    :root {
+      --blue-bg: #2b4173;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: var(--blue-bg);
+      overflow: hidden;
+    }
+
+    .swiper {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: 0 5vw;
+      box-sizing: border-box;
+      position: relative;
+      background-color: var(--blue-bg);
+    }
+
+    .slide-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      max-width: 1300px;
+      width: 100%;
+      gap: 2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .image-wrapper {
+      background-color: white;
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      max-width: 50vw;
+      max-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .art-image {
+      width: 100%;
+      height: auto;
+      max-height: 70vh;
+      object-fit: contain;
+      display: block;
+    }
+
+    .art-text {
+      width: 60vw;
+      color: white;
+      font-size: 1.1rem;
+      line-height: 1.75;
+      text-align: center;
+    }
+
+    .art-text strong {
+      color: white;
+      font-weight: bold;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 50px;
+      height: 50px;
+      background: white;
+      color: var(--blue-bg);
+      border-radius: 50%;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    .swiper-button-next {
+      right: 20px;
+    }
+
+    .swiper-button-prev {
+      left: 20px;
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .swiper-slide.bg-overlay {
+      position: relative;
+    }
+
+    .swiper-slide.bg-overlay::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      filter: grayscale(100%) brightness(0.4);
+      z-index: 1;
+    }
+
+    /* Background for slide 2 */
+    .swiper-slide:nth-child(2).bg-overlay::before {
+      background: url('../../9.png') center/cover no-repeat;
+    }
+
+    /* Background for slide 3 */
+    .swiper-slide:nth-child(3).bg-overlay::before {
+      background: url('../../8.png') center/cover no-repeat;
+    }
+
+    /* Background for slide 5 */
+    .swiper-slide:nth-child(5).bg-overlay::before {
+      background: url('../../6.png') center/cover no-repeat;
+    }
+
+    .swiper-slide.bg-overlay .slide-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .swiper-slide.bg-overlay .art-text {
+      position: relative;
+      z-index: 2;
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <div class="slide-inner">
+          <div class="image-wrapper">
+            <img src="../../20.png" alt="Blue Art 1" class="art-image" />
+          </div>
+          <div class="art-text">
+            Blue floods the background and the figure of Krishna, creating a serene, devotional aura. The peacocks echo his divine beauty and the monsoon's life-giving energy. Here, blue becomes a <strong>sanctified environment</strong> where Krishna's presence is not just central but cosmic, emphasizing harmony between the natural world and the divine.
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide bg-overlay">
+        <div class="slide-inner">
+          <div class="image-wrapper">
+            <img src="../../9.png" alt="Blue Art 2" class="art-image" />
+          </div>
+          <div class="art-text">
+            The deep indigo background contrasts with the white elephant and richly dressed figures. Blue here forms a celestial or dreamlike backdrop, lifting the scene from realism to mythology. It suggests <strong>divine protection over royal power, linking the rulers to heavenly authority</strong>.
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide bg-overlay">
+        <div class="slide-inner">
+          <div class="image-wrapper">
+            <img src="../../8.png" alt="Blue Art 3" class="art-image" />
+          </div>
+          <div class="art-text">
+            The dark blue sky situates the moment in a mythological space beyond time. <strong>Blue connects Rama and his divine companions to their epic journey, offering a celestial continuity and unity</strong>, while the chariot ride conveys dharma, movement, and divine destiny.
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="swiper-slide">
+        <div class="slide-inner">
+          <div class="image-wrapper">
+            <img src="../../7.png" alt="Blue Art 4" class="art-image" />
+          </div>
+          <div class="art-text">
+            Krishna lifting the Govardhan mountain dominates the lush landscape. The blue of his body radiates <strong>protection and calm amidst the chaotic flood</strong>. His presence is like an axis mundi—linking heaven, earth, and all beings. Blue here represents <strong>divine refuge and unwavering faith</strong>.
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 5 with grayscale background and button -->
+      <div class="swiper-slide bg-overlay">
+        <div class="slide-inner">
+          <div class="image-wrapper">
+            <img src="../../6.png" alt="Blue Art 5" class="art-image" />
+          </div>
+          <div class="art-text">
+            The alternating blocks of deep blue act <em>like night skies or spiritual veils</em>, dividing scenes and elevating each act into sacred narrative space. This use of blue as a framing device turns the entire sequence into a <strong>mythic continuum, signifying transcendence across lifetimes and actions</strong>. It acts as a medium to <strong>structure time while showcasing spirituality</strong>.
+          </div>
+          
+        </div>
+      </div>
+
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      loop: false
+    });
+  </script>
+  <!-- Add this to the <body> of each HTML page -->
+<div id="menu-toggle" class="menu-toggle">&#9776;</div>
+
+<!-- Side navigation -->
+<nav id="side-nav" class="side-nav">
+  <a href="#" class="close-btn" onclick="toggleMenu()">&times; Close</a>
+  <a href="/index.html">HOME</a>
+  <a href="/timeline/index.html">Timeline</a>
+  <a href="/symbolism/index.html">symbolism</a>
+  <a href="/colors/index.html">colors</a>
+  <a href="/collage.html">gallery</a>
+  <a href="/conclusion.html">conclusion</a>
+  <a href="/bibliography.html">bibliography</a>
+</nav>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+<style>
+  .menu-toggle {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 32px;
+    cursor: pointer;
+    z-index: 2000;
+  }
+
+  .side-nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1500;
+    top: 0;
+    right: 0;
+    background-color: #f8f8f8;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Helvetica', sans-serif;
+  }
+
+  
+
+  .side-nav a {
+    padding: 16px;
+    text-decoration: none;
+    font-size: 32px;
+    color: #1b2a4e;
+    display: block;
+    transition: 0.2s;
+  }
+
+  .side-nav a:hover {
+    color: #a68f52;
+  }
+
+  .close-btn {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    display: none;
+  }
+</style>
+
+<script>
+  const menu = document.getElementById('side-nav');
+  const overlay = document.getElementById('overlay');
+
+  function toggleMenu() {
+    if (menu.style.width === '250px') {
+      menu.style.width = '0';
+      overlay.style.display = 'none';
+    } else {
+      menu.style.width = '250px';
+      overlay.style.display = 'block';
+    }
+  }
+
+  document.getElementById('menu-toggle').addEventListener('click', toggleMenu);
+</script>
+
+</body>
+</html>

@@ -1,18 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colors - Thesis Project</title>
-    <link rel="stylesheet" href="../styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Colors - Thesis Project</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Helvetica Neue", sans-serif;
+      background-color: #fff;
+      color: black;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      padding: 40px 60px;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-size: 4.5rem;
+      font-weight: 400;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .content-wrapper {
+      display: flex;
+      width: 100%;
+      max-width: 1400px;
+      margin-bottom: 50px;
+    }
+
+    {% comment %} .left-column {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 2.5rem;
+      font-weight: bold;
+      padding-right: 20px;
+      text-transform: lowercase;
+      display: flex;
+      align-items: center;
+      line-height: 1;
+    } {% endcomment %}
+
+    .middle-section {
+      flex: 1;
+      padding-right: 20px;
+    }
+
+    .description {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .description .highlight {
+      color: #b71c1c;
+      font-weight: bold;
+    }
+
+    .right-column {
+      flex: 1.2;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 0.85rem;
+    }
+
+    th, td {
+      padding: 10px 14px;
+      border: 1px solid #ddd;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: #eee;
+      font-weight: bold;
+    }
+
+    .explore-button-container {
+      text-align: center;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    .explore-button {
+      display: inline-block;
+      background: transparent;
+      border: none;
+      color: #858585;
+      font-size: 1rem;
+      font-weight: normal;
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+      border-bottom: 1px solid #858585;
+    }
+
+    .explore-button:hover {
+      opacity: 0.6;
+    }
+
+    /* Sidebar */
+    .menu-toggle {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      font-size: 32px;
+      cursor: pointer;
+      z-index: 2000;
+    }
+
+    .side-nav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1500;
+      top: 0;
+      right: 0;
+      background-color: #f8f8f8;
+      overflow-x: hidden;
+      transition: 0.4s;
+      padding-top: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Helvetica', sans-serif;
+    }
+
+    .side-nav a {
+      padding: 16px;
+      text-decoration: none;
+      font-size: 32px;
+      color: #1b2a4e;
+      display: block;
+      transition: 0.2s;
+    }
+
+    .side-nav a:hover {
+      color: #a68f52;
+    }
+
+    .close-btn {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 1000;
+      display: none;
+    }
+  </style>
 </head>
-<body class="colors-page">
-    <div class="main-image-container">
-        <img src="../colors-landing-page.png" alt="Colors Table" class="main-image">
-        <div class="explore-button-container">
-            <a href="../colors-introduction-page/" class="explore-button">explore the art</a>
-        </div>
+<body>
+
+<div class="container">
+  <h1>colors in miniature paintings</h1>
+  <div class="content-wrapper">
+
+    <div class="middle-section">
+      <p class="description">
+        Colors carry deep symbolic significance, functioning not only as aesthetic choices but also as vehicles of meaning that <span class="highlight">reinforce the themes and emotions of each painting.</span> Every hue is deliberately chosen to convey spiritual, cultural, or emotional layers. For instance, blue often represents divinity and cosmic energy (especially in depictions of Krishna), while red signifies passion, power, or sacred rituals. Yellow denotes learning and auspiciousness, often associated with saints or seasons like spring, and green evokes nature, prosperity, and harmony. These colors do more than decorate; <span class="highlight">they guide the viewer's interpretation, anchoring the narrative in cultural codes and emotional resonance.</span>
+      </p>
     </div>
+    <div class="right-column">
+      <table>
+        <thead>
+          <tr>
+            <th>Color</th>
+            <th>Meaning</th>
+            <th>Themes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Red</td><td>Passion, power, rage, valor</td><td>Weddings, battles, love</td></tr>
+          <tr><td>Blue</td><td>Divinity, cosmic vastness</td><td>Krishna narratives, celestial beings</td></tr>
+          <tr><td>Yellow</td><td>Knowledge, learning, spring, sanctity</td><td>Seasons, asceticism</td></tr>
+          <tr><td>Green</td><td>Nature, prosperity, harmony</td><td>Forests, flora-fauna, devotional contexts</td></tr>
+          <tr><td>White</td><td>Purity, peace, transcendence</td><td>Saints, sages, spiritual settings</td></tr>
+          <tr><td>Gold</td><td>Royalty, wealth, spiritual elevation</td><td>Court life, deities, halos</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="explore-button-container">
+    <a href="../colors-introduction-page/" class="explore-button">explore the art</a>
+  </div>
+</div>
+
+<!-- Side Navigation -->
+<div id="menu-toggle" class="menu-toggle">&#9776;</div>
+<nav id="side-nav" class="side-nav">
+  <a href="#" class="close-btn" onclick="toggleMenu()">&times; Close</a>
+  <a href="/index.html">HOME</a>
+  <a href="/timeline/index.html">Timeline</a>
+  <a href="/symbolism/index.html">symbolism</a>
+  <a href="/colors/index.html">colors</a>
+  <a href="/collage.html">gallery</a>
+  <a href="/conclusion.html">conclusion</a>
+  <a href="/bibliography.html">bibliography</a>
+</nav>
+<div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+<script>
+  const menu = document.getElementById('side-nav');
+  const overlay = document.getElementById('overlay');
+
+  function toggleMenu() {
+    if (menu.style.width === '250px') {
+      menu.style.width = '0';
+      overlay.style.display = 'none';
+    } else {
+      menu.style.width = '250px';
+      overlay.style.display = 'block';
+    }
+  }
+
+  document.getElementById('menu-toggle').addEventListener('click', toggleMenu);
+</script>
 </body>
 </html>
-

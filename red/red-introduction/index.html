@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Red Art Slider</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style>
+    :root {
+      --red-bg: #8b0000;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: var(--red-bg);
+      overflow: hidden;
+    }
+
+    .swiper {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: 0 5vw;
+      box-sizing: border-box;
+      position: relative;
+      background-color: var(--red-bg);
+    }
+
+    .slide-inner {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      max-width: 1300px;
+      width: 100%;
+      gap: 4vw;
+      position: relative;
+      z-index: 2;
+    }
+
+    .slide-left .slide-inner {
+      flex-direction: row;
+    }
+
+    .slide-right .slide-inner {
+      flex-direction: row-reverse;
+    }
+
+    .image-wrapper {
+      background-color: white;
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      max-width: 40vw;
+      max-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .art-image {
+      width: 100%;
+      height: auto;
+      max-height: 70vh;
+      object-fit: contain;
+      display: block;
+    }
+
+    .art-text {
+      width: 40vw;
+      color: white;
+      font-size: 1.1rem;
+      line-height: 1.75;
+    }
+
+    .art-text strong {
+      color: white;
+      font-weight: bold;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 50px;
+      height: 50px;
+      background: white;
+      color: var(--red-bg);
+      border-radius: 50%;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    .swiper-button-next {
+      right: 20px;
+    }
+
+    .swiper-button-prev {
+      left: 20px;
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .swiper-slide.bg-overlay {
+      position: relative;
+    }
+
+    .swiper-slide.bg-overlay::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      filter: grayscale(100%) brightness(0.4);
+      z-index: 1;
+    }
+
+    /* Background for slide 2 */
+    .swiper-slide:nth-child(2).bg-overlay::before {
+      background: url('../../5.png') center/cover no-repeat;
+    }
+
+    /* Background for slide 4 */
+    .swiper-slide:nth-child(4).bg-overlay::before {
+      background: url('../../3.png') center/cover no-repeat;
+    }
+
+    /* Background for slide 5 */
+    .swiper-slide:nth-child(5).bg-overlay::before {
+      background: url('../../2.png') center/cover no-repeat;
+    }
+
+    .swiper-slide.bg-overlay .slide-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .swiper-slide.bg-overlay .art-text {
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide slide-left">
+        <div class="slide-inner">
+          <div class="image-wrapper">
+            <img src="../../1.png" alt="Art 1" class="art-image" />
+          </div>
+          <div class="art-text">
+            In this painting, the red backdrop provides a divine and dramatic aura to the central figures—likely Krishna and Radha—seated on a throne, surrounded by musical and festive elements. Red here is not just decorative; it marks sacred intimacy and royal celebration.
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 with grayscale background -->
+      <div class="swiper-slide slide-right bg-overlay">
+        <div class="slide-inner">
+          <div class="image-wrapper">
+            <img src="../../5.png" alt="Art 2" class="art-image" />
+          </div>
+          <div class="art-text">
+            This painting balances red more subtly, using it in the carpet and garments rather than the background. Here, red suggests <strong>majesty and reverence</strong>, with the courtly gathering of Ram, Sita, and the vanaras beneath a large tree. The calm green expanse contrasts with the red, which adds ritual importance to the moment, signaling <strong>devotion and royal presence</strong>.
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide slide-left">
+        <div class="slide-inner">
+          <div class="image-wrapper">
+            <img src="../../4.png" alt="Art 3" class="art-image" />
+          </div>
+          <div class="art-text">
+            This painting returns to a deep red background, emphasizing a dramatic encounter—likely a moment of <strong>farewell, secrecy, or blessing</strong>. The indoor/outdoor architecture is layered with depth, and red here conveys <strong>emotional richness, possibly sorrow mixed with sanctity</strong>. The crowd of veiled women below and the elevated chariot-like platform reinforce a public yet private atmosphere—<strong>possibly a wedding, departure, or darshan</strong>.
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="swiper-slide slide-right bg-overlay">
+        <div class="slide-inner">
+          <div class="image-wrapper">
+            <img src="../../3.png" alt="Art 4" class="art-image" />
+          </div>
+          <div class="art-text">
+            The setting is intimate: a swing scene within a palace. Red dominates both the swing and background, creating a domestic environment. The color channels <strong>romantic love, festivity, and ritual adornment</strong>—a common theme in Rasik scenes of Rajput art. This painting is about <strong>union, ornamentation, and the emotional power of setting within structured architecture</strong>.
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 5 -->
+      <div class="swiper-slide slide-left bg-overlay">
+        <div class="slide-inner">
+          <div class="image-wrapper">
+            <img src="../../2.png" alt="Art 5" class="art-image" />
+          </div>
+          <div class="art-text">
+            This painting uses red expansively to divide scenes—on the right, where women welcome a male figure, the red suggests <strong>hospitality, ritual purity, and social warmth</strong>. In contrast, the forest side shows Krishna and his companions, shaded in green and black, where red functions almost as a <strong>narrative device separating the sacred space of the encounter from the pastoral setting</strong>. The duality of red and green here also hints at <strong>spiritual versus worldly domains</strong>.
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      loop: false
+    });
+  </script>
+  <!-- Add this to the <body> of each HTML page -->
+<div id="menu-toggle" class="menu-toggle">&#9776;</div>
+
+<!-- Side navigation -->
+<nav id="side-nav" class="side-nav">
+  <a href="#" class="close-btn" onclick="toggleMenu()">&times; Close</a>
+  <a href="/index.html">HOME</a>
+  <a href="/timeline/index.html">Timeline</a>
+  <a href="/symbolism/index.html">symbolism</a>
+  <a href="/colors/index.html">colors</a>
+  <a href="/collage.html">gallery</a>
+  <a href="/conclusion.html">conclusion</a>
+  <a href="/bibliography.html">bibliography</a>
+</nav>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+<style>
+  .menu-toggle {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 32px;
+    cursor: pointer;
+    z-index: 2000;
+  }
+
+  .side-nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1500;
+    top: 0;
+    right: 0;
+    background-color: #f8f8f8;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Helvetica', sans-serif;
+  }
+
+  .side-nav a {
+    padding: 16px;
+    text-decoration: none;
+    font-size: 32px;
+    color: #1b2a4e;
+    display: block;
+    transition: 0.2s;
+  }
+
+  .side-nav a:hover {
+    color: #a68f52;
+  }
+
+  .close-btn {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    display: none;
+  }
+</style>
+
+<script>
+  const menu = document.getElementById('side-nav');
+  const overlay = document.getElementById('overlay');
+
+  function toggleMenu() {
+    if (menu.style.width === '250px') {
+      menu.style.width = '0';
+      overlay.style.display = 'none';
+    } else {
+      menu.style.width = '250px';
+      overlay.style.display = 'block';
+    }
+  }
+
+  document.getElementById('menu-toggle').addEventListener('click', toggleMenu);
+</script>
+
+</body>
+</html>
