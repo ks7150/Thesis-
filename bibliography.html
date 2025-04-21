@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bibliography - Thesis Project</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background: #fdfdfd;
+      color: #111;
+      margin: 0;
+      padding: 4rem 2rem;
+      overflow-y: auto; /* Enable vertical scrolling */
+    }
+
+    .bibliography-container {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .citation {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1.4rem;
+      word-wrap: break-word;
+    }
+
+    .citation a {
+      color: #1a0dab;
+      text-decoration: underline;
+    }
+
+    .ai-note {
+      font-style: italic;
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid #ccc;
+      color: #444;
+    }
+
+    .menu-toggle {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      font-size: 32px;
+      cursor: pointer;
+      z-index: 2000;
+    }
+
+    .side-nav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1500;
+      top: 0;
+      right: 0;
+      background-color: #f8f8f8;
+      overflow-x: hidden;
+      transition: 0.4s;
+      padding-top: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Helvetica', sans-serif;
+    }
+
+    .side-nav a {
+      padding: 16px;
+      text-decoration: none;
+      font-size: 32px;
+      color: #1b2a4e;
+      display: block;
+      transition: 0.2s;
+    }
+
+    .side-nav a:hover {
+      color: #a68f52;
+    }
+
+    .close-btn {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 1000;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bibliography-container">
+    <h1>Bibliography</h1>
+
+    <div class="citation">
+      6 Things to Know About Indian Miniatures — Google Arts & Culture. <a href="https://artsandculture.google.com/story/6-things-to-know-about-indian-miniatures/MwXBsgeth_flpQ?hl=en" target="_blank">Link</a>
+    </div>
+
+    <div class="citation">
+      “22.8: India under British Imperialism.” Humanities LibreTexts, 1 May 2020. <a href="https://human.libretexts.org/Bookshelves/Art/Art_History_(Boundless)/22%3A_South_and_Southeast_Asia_After_1200_CE/22.08%3A_India_under_British_Imperialism" target="_blank">Link</a>
+    </div>
+
+    <div class="citation">
+      Awrangzib as a Young Prince - La’l Chand — Google Arts & Culture. <a href="https://artsandculture.google.com/asset/awrangzib-as-a-young-prince-la-l-chand/7wEMYKOkk-JLGg" target="_blank">Link</a>
+    </div>
+
+    <!-- Add more entries in the same format -->
+    <div class="citation">“Barahmasa.” <i>Wikipedia</i>, 23 Nov. 2024. <a href="https://en.wikipedia.org/w/index.php?title=Barahmasa&oldid=1259075248" target="_blank">Wikipedia Link</a>.</div>
+
+    <div class="citation">Bendix, Regina F., and Galit Hasan-Rokem. <i>A Companion to Folklore</i>. Wiley-Blackwell, 2012. <a href="https://doi.org/10.1002/9781118379936" target="_blank">DOI Link</a>.</div>
+  
+    <div class="citation">Chatterji, Roma. <i>GRAPHIC NARRATIVES AND THE MYTHOLOGICAL IMAGINATION IN INDIA</i>. Routledge, 2019. <a href="https://doi.org/10.4324/9780429295928" target="_blank">DOI Link</a>.</div>
+  
+    <div class="citation">“Chitrakathi Art.” <i>Google Arts & Culture</i>. <a href="https://artsandculture.google.com/story/chitrakathi-art/YAWBibTpIqG7KA" target="_blank">Google Link</a>.</div>
+  
+    <div class="citation">Ciotti, Manuela. “Post-Colonial Renaissance: ‘Indianness’, Contemporary Art and the Market in the Age of Neoliberal Capital.” <i>Third World Quarterly</i>, vol. 33, no. 4, 2012, pp. 637–55.</div>
+  
+    <div class="citation">“Congregation of Birds - A Folio from an Illustrated Manuscript of Anwar-i-Suhaili.” <i>Google Arts & Culture</i>. <a href="https://artsandculture.google.com/asset/congregation-of-birds-a-folio-from-an-illustrated-manuscript-of-anwar-i-suhaili/lAF95YLKNgn5Ag" target="_blank">Google Link</a>.</div>
+  
+    <div class="citation">Dal Falco, Federica, and Stavros Vassos. “Museum Experience Design: A Modern Storytelling Methodology.” <i>The Design Journal</i>, vol. 20, no. sup1, 2017, pp. S3975–83. <a href="https://doi.org/10.1080/14606925.2017.1352900" target="_blank">DOI Link</a>.</div>
+  
+    <div class="citation">Datta, Bīrendranātha. <i>Affinities Between Folkloristics and Historiography</i>. NFSC www.indianfolklore.org, 2002.</div>
+  
+    <div class="citation">“Delhi in Ruins: Company School Painting in India.” <i>The Metropolitan Museum of Art</i>, 18 Apr. 2017. <a href="https://www.metmuseum.org/perspectives/delhi-in-ruins" target="_blank">Met Museum Link</a>.</div>
+  
+    <div class="citation">Eve-Barnett, Mandy. “History of Miniature Paintings.” <i>Picture This Framing & Gallery</i>, 28 Apr. 2023. <a href="https://www.picturethisgallery.com/blog/history-of-miniature-paintings/" target="_blank">Picture This Link</a>.</div>
+  
+    <div class="citation">globalworship. “Praying with Peacocks & Raginis in Indian Art.” <i>Tumblr</i>. <a href="https://globalworship.tumblr.com/post/177008739865/praying-with-peacocks-raginis-in-indian-art" target="_blank">Tumblr Link</a>.</div>
+  
+    <div class="citation">“History of Miniature Paintings.” <i>Picture This Framing & Gallery</i>. <a href="https://www.picturethisgallery.com/blog/history-of-miniature-paintings/" target="_blank">Picture This Link</a>.</div>
+  
+    <div class="citation">“How Shahzia Sikander Remade the Art of Miniature Painting.” <i>The New Yorker</i>. <a href="https://www.newyorker.com/culture/culture-desk/how-shahzia-sikander-remade-the-art-of-miniature-painting" target="_blank">New Yorker Link</a>.</div>
+  
+    <div class="citation">“India: A History in Objects.” <i>Thames & Hudson USA</i>. <a href="https://www.thamesandhudsonusa.com/books/india-a-history-in-objects-hardcover" target="_blank">Publisher Link</a>.</div>
+  
+    <div class="citation">“Indian Epics In Art.” <i>Google Arts & Culture</i>. <a href="https://artsandculture.google.com/story/indian-epics-in-art/ZAXx-HIJvkGzqA" target="_blank">Google Link</a>.</div>
+  
+    <div class="citation">“Indian Miniature Paintings.” <i>Wikipedia</i>, 1 Mar. 2025. <a href="https://en.wikipedia.org/w/index.php?title=Indian_miniature_paintings&oldid=1278219528#History_of_Indian_Painting" target="_blank">Wikipedia Link</a>.</div>
+  
+    <div class="citation">“Indian Miniature Paintings: A History.” <i>Google Arts & Culture</i>. <a href="https://artsandculture.google.com/story/indian-miniature-paintings-a-history/eAURdUsdMraLeA" target="_blank">Google Link</a>.</div>
+    <div class="citation">Info, CAMI. “Miniature Paintings.” <i>CAMI</i>, 1 Dec. 2021. <a href="https://www.childrensartmuseumofindia.com/post/miniature-paitning" target="_blank">CAMI Link</a>.</div>
+
+<div class="citation">Jain, Anshika. “A Touch of Indian Yellow.” <i>PeepulTree</i>, 27 Feb. 2019. <a href="https://www.peepultree.world/livehistoryindia/story/art-history/a-touch-of-indian-yellow" target="_blank">PeepulTree Link</a>.</div>
+
+<div class="citation">Jain, Kajri. <i>Gods in the Bazaar: The Economies of Indian Calendar Art</i>. Duke University Press, 2007. <a href="https://doi.org/10.2307/j.ctv1131bjr" target="_blank">JSTOR Link</a>.</div>
+
+<div class="citation">Lal, Krishna. <i>Peacock in Indian Art, Thought and Literature</i>. Abhinav Publications, 2006.</div>
+
+<div class="citation">“Life in Miniature.” <i>Google Arts & Culture</i>. <a href="https://artsandculture.google.com/project/life-in-miniature" target="_blank">Google Arts Link</a>.</div>
+
+<div class="citation">London, Roseberys. “A Pair of Mughal-Style Modern Paintings of Birds, India.” <i>Roseberys London</i>. <a href="https://www.roseberys.co.uk/a0541-lot-522238" target="_blank">Roseberys Link</a>.</div>
+
+<div class="citation">“Looted Art and Missing Context of Indian History at the British Museum.” <i>SOAS</i>, 26 Jan. 2023. <a href="https://www.soas.ac.uk/about/blog/looted-art-and-missing-context-indian-history-british-museum" target="_blank">SOAS Link</a>.</div>
+<div class="citation">“Mandalas: Mapping the Buddhist Art of Tibet.” <i>The Metropolitan Museum of Art</i>. <a href="https://www.metmuseum.org/exhibitions/mandalas-mapping-the-buddhist-art-of-tibet" target="_blank">Met Museum Link</a>.</div>
+
+<div class="citation">“Miniature Paintings from South Asia.” <i>Princeton University Art Museum</i>. <a href="https://artmuseum.princeton.edu/object-package/miniature-paintings-south-asia/88413" target="_blank">Princeton Link</a>.</div>
+
+<div class="citation">“Miniature Paintings of India – Chronicling History Through the Ages.” <i>Artisera</i>. <a href="https://www.artisera.com/blogs/expressions/miniature-paintings-of-india-chronicling-history-through-the-ages" target="_blank">Artisera Link</a>.</div>
+
+<div class="citation">Morelli, Sarah. “Intergenerational Adaptation in North Indian Kathak Dance.” <i>Anthropological Notebooks</i>, vol. 16, Jan. 2010.</div>
+
+<div class="citation">“Mughal Emperor Shahjahan in the Marriage Procession His Eldest Son Dara Shikoh - Unknown.” <i>Google Arts & Culture</i>. <a href="https://artsandculture.google.com/asset/mughal-emperor-shahjahan-in-the-marriage-procession-his-eldest-son-dara-shikoh-unknown/GgH3QLZS7GKWAA" target="_blank">Google Arts Link</a>.</div>
+
+<div class="citation">“Peacock Pichwai Stunning Artworks That Captivate the Soul.” <i>BeyondSquare</i>, 28 June 2024. <a href="https://beyondsquare.in/peacock-pichwai-stunning-artworks/" target="_blank">BeyondSquare Link</a>.</div>
+
+<div class="citation">“Pichwai Art: The Folk Art of Nathdwara, Rajasthan.” <i>iTokri आई.टोकरी</i>. <a href="https://itokri.com/blogs/craft-masala-by-itokri/pichwai-art-the-folk-art-of-nathdwara-rajasthan" target="_blank">iTokri Link</a>.</div>
+
+<div class="citation">“Ragini Todi.” <i>Google Arts & Culture</i>. <a href="https://artsandculture.google.com/asset/ragini-todi/dgH6MzPNPrLbbA" target="_blank">Google Arts Link</a>.</div>
+
+<div class="citation">“Rama Durbar - Unknown.” <i>Google Arts & Culture</i>. <a href="https://artsandculture.google.com/asset/rama-durbar-unknown/QQGVQ6Mq3VjmIg" target="_blank">Google Arts Link</a>.</div>
+
+<div class="citation">“Rooftop Blog: Natural Colours of Pichwai Painting.” <i>Rooftop</i>. <a href="https://rooftopapp.com/blogs/natural-colours-of-pichwai-painting" target="_blank">Rooftop Link</a>.</div>
+<div class="citation">Saha, Bratati. “Kathak--The Art of Storytelling: Bratati Saha Talks to ChildArt.” <i>ChildArt</i>, vol. 25, no. 1, International Child Art Foundation, 2024.</div>
+
+<div class="citation">Sharma, Devendra. “Community, Artistry, and Storytelling in the Cultural Confluence of Nautanki and Ramlila.” <i>Asian Theatre Journal</i>, vol. 37, no. 1, 2020, pp. 107–32. <a href="https://doi.org/10.1353/atj.2020.0027" target="_blank">DOI Link</a>.</div>
+
+<div class="citation">“Shibboleth Authentication Request.” <i>Wiley Online Library</i>. <a href="https://onlinelibrary.wiley.com/doi/10.1002/9781118379936.ch12" target="_blank">Wiley Link</a>.</div>
+
+<div class="citation">“Spiritual Dimensions of Kathak and Bharatnatyam.” <i>Dr. D. Y. Patil School of Liberal Arts, Pimpri, Pune</i>. <a href="https://liberalarts.dpu.edu.in/blogs/spiritual-dimensions-kathak-bharatnatyam" target="_blank">School Blog</a>.</div>
+
+<div class="citation">“The Art of Storytelling Through Indian Paintings.” <i>Aangan Doree</i>, 15 July 2024. <a href="https://aangandoree.in/blogs/news/the-art-of-storytelling-through-indian-paintings" target="_blank">Aangan Doree Link</a>.</div>
+
+<div class="citation">“The Cosmic Lotus Mahakala and the Ten Sikh Gurus - Unknown.” <i>Google Arts & Culture</i>. <a href="https://artsandculture.google.com/asset/the-cosmic-lotus-mahakala-and-the-ten-sikh-gurus-unknown/YAFxS0cCL4vhdw" target="_blank">Google Arts Link</a>.</div>
+
+<div class="citation">“The Pichwai Tradition: Tapestries of Krishna.” <i>Google Arts & Culture</i>. <a href="https://artsandculture.google.com/story/the-pichwai-tradition-tapestries-of-krishna/6gVBMaDSAPGtIw" target="_blank">Google Arts Story</a>.</div>
+
+<div class="citation">“Unparalleled Indian Miniatures.” <i>Sotheby's</i>, 1 Sept. 2015. <a href="https://www.sothebys.com/en/slideshows/unparalleled-indian-miniatures" target="_blank">Sotheby's Link</a>.</div>
+
+<div class="citation">Vandewalle, Alexander. “Video Games as Mythology Museums? Mythographical Story Collections in Games.” <i>International Journal of the Classical Tradition</i>, vol. 31, no. 1, 2024, pp. 90–112. <a href="https://doi.org/10.1007/s12138-023-00646-w" target="_blank">DOI Link</a>.</div>
+
+<div class="citation">“Vishnu Reclining on the Serpent Shesha with Lakshmi in Attendance - Unknown.” <i>Google Arts & Culture</i>. <a href="https://artsandculture.google.com/asset/vishnu-reclining-on-the-serpent-shesha-with-lakshmi-in-attendance-unknown/jQE9KKZxhwUD_A" target="_blank">Google Arts Link</a>.</div>
+
+<div class="citation">Zimmer, Heinrich Robert. <i>Myths and Symbols in Indian Art and Civilization</i>. Princeton University Press, 1946.</div>
+
+
+    
+
+    <div class="citation ai-note">
+      <strong>AI Usage:</strong> AI tools like ChatGPT, Grammarly, and Perplexity were used to fix grammar, assist with code, and paraphrase certain parts of the text. Some portions of the text were also translated from Hindi and Sanskrit to English for clarity.
+    </div>
+  </div>
+
+  <div id="menu-toggle" class="menu-toggle">&#9776;</div>
+
+  <nav id="side-nav" class="side-nav">
+    <a href="#" class="close-btn" onclick="toggleMenu()">&times; Close</a>
+    <a href="/index.html">HOME</a>
+    <a href="/timeline/index.html">Timeline</a>
+    <a href="/symbolism/index.html">symbolism</a>
+    <a href="/colors/index.html">colors</a>
+    <a href="/collage.html">gallery</a>
+    <a href="/conclusion.html">conclusion</a>
+    <a href="/bibliography.html">bibliography</a>
+  </nav>
+
+  <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+  <script>
+    const menu = document.getElementById('side-nav');
+    const overlay = document.getElementById('overlay');
+
+    function toggleMenu() {
+      if (menu.style.width === '250px') {
+        menu.style.width = '0';
+        overlay.style.display = 'none';
+      } else {
+        menu.style.width = '250px';
+        overlay.style.display = 'block';
+      }
+    }
+
+    document.getElementById('menu-toggle').addEventListener('click', toggleMenu);
+  </script>
+</body>
+</html>

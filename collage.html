@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Collection - Mughal Era</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue Light", "Helvetica Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 300;
+            background: #5b5f38;
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .page-container {
+            position: relative;
+            min-height: 100vh;
+            padding-bottom: 40px;
+        }
+
+        .collage-container {
+            max-width: 1400px;
+            margin: 120px auto 40px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            position: relative;
+        }
+
+        .collage-item {
+            position: relative;
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 4px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            background: #000;
+        }
+
+        .collage-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .collage-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .collage-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            font-size: 14px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .collage-item:hover .image-overlay {
+            transform: translateY(0);
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 40px;
+            left: 40px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-size: 14px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            font-weight: 300;
+            text-decoration: none;
+            z-index: 10;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+        }
+
+        h1 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            margin: 0;
+            padding: 40px 0;
+            font-weight: 300;
+            font-size: 32px;
+            letter-spacing: 0.05em;
+            background: rgba(91, 95, 56, 0.95);
+            backdrop-filter: blur(5px);
+            z-index: 5;
+        }
+
+        @media (max-width: 768px) {
+            .collage-container {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+                margin-top: 100px;
+            }
+
+            h1 {
+                font-size: 24px;
+                padding: 20px 0;
+            }
+
+            .back-btn {
+                top: 20px;
+                left: 20px;
+                padding: 8px 16px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <h1>Gallery</h1>
+        <a href="index.html" class="back-btn">← Back to Home</a>
+        
+        <div class="collage-container">
+            <!-- Landing Page -->
+
+
+            <!-- Red Gallery -->
+            <a href="red/red-introduction/index.html" class="collage-item">
+                <img src="1.png" alt="Red Art 1">
+                <div class="image-overlay">Red Gallery - Art 1</div>
+            </a>
+            
+            <a href="red/red-introduction/index.html" class="collage-item">
+                <img src="2.png" alt="Red Art 5">
+                <div class="image-overlay">Red Gallery - Art 5</div>
+            </a>
+
+            <a href="red/red-introduction/index.html" class="collage-item">
+                <img src="3.png" alt="Red Art 4">
+                <div class="image-overlay">Red Gallery - Art 4</div>
+            </a>
+
+            <a href="red/red-introduction/index.html" class="collage-item">
+                <img src="4.png" alt="Red Art 3">
+                <div class="image-overlay">Red Gallery - Art 3</div>
+            </a>
+
+            <a href="red/red-introduction/index.html" class="collage-item">
+                <img src="5.png" alt="Red Art 2">
+                <div class="image-overlay">Red Gallery - Art 2</div>
+            </a>
+
+            <!-- Blue Gallery -->
+            <a href="blue/blue-introduction/index.html" class="collage-item">
+                <img src="6.png" alt="Blue Art 5">
+                <div class="image-overlay">Blue Gallery - Art 5</div>
+            </a>
+
+            <a href="blue/blue-introduction/index.html" class="collage-item">
+                <img src="7.png" alt="Blue Art 4">
+                <div class="image-overlay">Blue Gallery - Art 4</div>
+            </a>
+
+            <a href="blue/blue-introduction/index.html" class="collage-item">
+                <img src="8.png" alt="Blue Art 3">
+                <div class="image-overlay">Blue Gallery - Art 3</div>
+            </a>
+
+            <a href="blue/blue-introduction/index.html" class="collage-item">
+                <img src="9.png" alt="Blue Art 2">
+                <div class="image-overlay">Blue Gallery - Art 2</div>
+            </a>
+
+            <!-- Symbolism -->
+            <a href="symbolism/symbolism-intro/index.html" class="collage-item">
+                <img src="10.png" alt="Symbolism Art 2">
+                <div class="image-overlay">Symbolism Gallery - Art 2</div>
+            </a>
+
+            <a href="symbolism/symbolism-intro/index.html" class="collage-item">
+                <img src="11.png" alt="Symbolism Art 3">
+                <div class="image-overlay">Symbolism Gallery - Art 3</div>
+            </a>
+
+            <a href="symbolism/symbolism-intro/index.html" class="collage-item">
+                <img src="12.png" alt="Symbolism Art 4">
+                <div class="image-overlay">Symbolism Gallery - Art 4</div>
+            </a>
+
+            <!-- Mughal Gallery -->
+            <a href="timeline/mughal-gallery.html#slide-1" class="collage-item">
+                <img src="13.png" alt="Minimalist Mughal Portrait">
+                <div class="image-overlay">Mughal Gallery - Portrait</div>
+            </a>
+
+            <a href="timeline/mughal-gallery.html#slide-0" class="collage-item">
+                <img src="14.png" alt="Mughal Imperial Procession">
+                <div class="image-overlay">Mughal Gallery - Procession</div>
+            </a>
+
+            <!-- Yellow Gallery -->
+            <a href="yellow-introduction-page/index.html" class="collage-item">
+                <img src="15.png" alt="Yellow Art 2">
+                <div class="image-overlay">Yellow Gallery - Art 2</div>
+            </a>
+
+            <a href="timeline/mughal-gallery.html#slide-3" class="collage-item">
+                <img src="16.png" alt="Shah Jahan Court Scene">
+                <div class="image-overlay">Mughal Gallery - Court Scene</div>
+            </a>
+
+            <a href="yellow-introduction-page/index.html" class="collage-item">
+                <img src="17.png" alt="Yellow Art">
+                <div class="image-overlay">Yellow Gallery</div>
+            </a>
+
+            <a href="yellow-introduction-page/index.html" class="collage-item">
+                <img src="18.png" alt="Yellow Art 3">
+                <div class="image-overlay">Yellow Gallery - Art 3</div>
+            </a>
+
+            <!-- Blue Gallery -->
+            <a href="blue/blue-introduction/index.html" class="collage-item">
+                <img src="20.png" alt="Blue Art 1">
+                <div class="image-overlay">Blue Gallery - Art 1</div>
+            </a>
+
+            <!-- Symbolism -->
+            <a href="symbolism/symbolism-intro/index.html" class="collage-item">
+                <img src="22.png" alt="Symbolism Art 1">
+                <div class="image-overlay">Symbolism Gallery - Art 1</div>
+            </a>
+
+            <!-- Timeline -->
+            <a href="timeline/slider.html" class="collage-item">
+                <img src="23.png" alt="Contemporary 1">
+                <div class="image-overlay">Timeline - Contemporary 1</div>
+            </a>
+
+
+
+
+            <a href="timeline/slider.html" class="collage-item">
+                <img src="26.png" alt="British Raj Painting">
+                <div class="image-overlay">Timeline - British Raj</div>
+            </a>
+
+            <a href="timeline/slider.html" class="collage-item">
+                <img src="27.png" alt="Mughal Painting">
+                <div class="image-overlay">Timeline - Mughal Era</div>
+            </a>
+
+            <a href="timeline/mughal-gallery.html#slide-2" class="collage-item">
+                <img src="28.png" alt="Mughal Court Dance Scene">
+                <div class="image-overlay">Mughal Gallery - Dance Scene</div>
+            </a>
+
+
+
+
+
+        </div>
+    </div>
+
+    <script>
+        // Randomize the order of the images
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('.collage-container');
+            const items = Array.from(container.children);
+            
+            // Fisher-Yates shuffle algorithm
+            for (let i = items.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                container.appendChild(items[j]);
+            }
+        });
+    </script>
+    <!-- Add this to the <body> of each HTML page -->
+<div id="menu-toggle" class="menu-toggle">&#9776;</div>
+
+<!-- Side navigation -->
+<nav id="side-nav" class="side-nav">
+  <a href="#" class="close-btn" onclick="toggleMenu()">&times; Close</a>
+  <a href="/index.html">HOME</a>
+  <a href="/timeline/index.html">Timeline</a>
+  <a href="/symbolism/index.html">symbolism</a>
+  <a href="/colors/index.html">colors</a>
+  <a href="/collage.html">gallery</a>
+  <a href="/conclusion.html">conclusion</a>
+  <a href="/bibliography.html">bibliography</a>
+</nav>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+<style>
+  .menu-toggle {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 32px;
+    cursor: pointer;
+    z-index: 2000;
+  }
+
+  .side-nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1500;
+    top: 0;
+    right: 0;
+    background-color: #f8f8f8;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Helvetica', sans-serif;
+  }
+
+  .side-nav a {
+    padding: 16px;
+    text-decoration: none;
+    font-size: 32px;
+    color: #1b2a4e;
+    display: block;
+    transition: 0.2s;
+  }
+
+  .side-nav a:hover {
+    color: #a68f52;
+  }
+
+  .close-btn {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    display: none;
+  }
+</style>
+
+<script>
+  const menu = document.getElementById('side-nav');
+  const overlay = document.getElementById('overlay');
+
+  function toggleMenu() {
+    if (menu.style.width === '250px') {
+      menu.style.width = '0';
+      overlay.style.display = 'none';
+    } else {
+      menu.style.width = '250px';
+      overlay.style.display = 'block';
+    }
+  }
+
+  document.getElementById('menu-toggle').addEventListener('click', toggleMenu);
+</script>
+
+</body>
+</html> 
