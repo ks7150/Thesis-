@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mughal Era Gallery</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue Light", "Helvetica Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 300;
+            background: #5b5f38;
+            color: white;
+            overflow: hidden;
+        }
+
+        .gallery-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-slider {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .gallery-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            display: flex;
+            align-items: center;
+            padding: 40px 80px;
+            box-sizing: border-box;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .gallery-slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .gallery-slide img {
+            max-height: 75vh;
+            width: auto;
+            max-width: 45%;
+            object-fit: contain;
+        }
+
+        .gallery-slide .text {
+            width: 45%;
+            padding: 40px;
+            box-sizing: border-box;
+            font-size: 18px;
+            line-height: 1.8;
+            letter-spacing: 0.02em;
+            font-weight: 300;
+        }
+
+        .gallery-slide.with-bg {
+            overflow: hidden;
+        }
+
+        .gallery-slide.with-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            filter: grayscale(100%) brightness(0.3);
+            z-index: 0;
+        }
+
+        .gallery-slide.with-bg img,
+        .gallery-slide.with-bg .text {
+            position: relative;
+            z-index: 1;
+        }
+
+        .gallery-slide.with-bg .text {
+            background: rgba(91, 95, 56, 0.7);
+            backdrop-filter: blur(5px);
+        }
+
+        .gallery-slide.procession::before {
+            background-image: url('../14.png');
+        }
+
+        .gallery-slide.dance::before {
+            background-image: url('../28.png');
+        }
+
+
+        /* Navigation Controls */
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            background: transparent;
+            border: none;
+            color: white;
+            padding: 20px;
+            cursor: pointer;
+            font-size: 24px;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .prev-btn {
+            left: 0;
+        }
+
+        .next-btn {
+            right: 0;
+        }
+
+        .dots-nav {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 10;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            z-index: 10;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-size: 14px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            font-weight: 300;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery-container">
+        <button class="back-btn" onclick="window.location.href='slider.html#slide2'">← Back to Timeline</button>
+        
+        <div class="gallery-slider">
+            <!-- Slide 1 -->
+            <div class="gallery-slide active procession with-bg">
+                <img src="../14.png" alt="Mughal Imperial Procession">
+                <div class="text">
+                    <p>This painting captures the vibrancy and opulence of a <strong>Mughal imperial procession, likely during a festival or royal wedding</strong>. The nighttime setting, illuminated by fireworks and flaming torches, is rare and demonstrates the Mughal artists' growing experimentation with <strong>atmosphere and lighting—perhaps inspired by Persian night scenes and Safavid court festivities</strong>. The emperor is shown on horseback, surrounded by nobles, musicians, torchbearers, and elephants, with every figure carefully individualized—showcasing the Mughal emphasis on <strong>portraiture and rank-based visual hierarchy</strong>.</p>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="gallery-slide">
+                <img src="../13.png" alt="Minimalist Mughal Portrait">
+                <div class="text">
+                    <p>This minimalist drawing, featuring a single figure in profile, is an exquisite example of Mughal portraiture, highly influenced by <strong>Persian manuscript margins and calligraphic refinement</strong>. The subject—possibly Aurangzeb—is rendered with delicate lines and restrained elegance, wearing minimal adornment but exuding dignity. <strong>The floral border in gold and cobalt draws directly from Persian illumination traditions, where paintings were framed like jewels within manuscript folios</strong>.</p>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="gallery-slide dance with-bg">
+                <img src="../28.png" alt="Mughal Court Dance Scene">
+                <div class="text">
+                    <p>This lively interior scene of a dancer performing before a nobleman and female courtiers reveals the Mughal fascination with <strong>music, dance, and leisure, often depicted in their palace life miniatures</strong>. The richly decorated interior—with <strong>Persian carpets, mirrored walls, and patterned niches—reflects Persian influence in architectural ornamentation</strong>, while the women's costumes and expressive postures exhibit local Rajput aesthetics. The visual rhythm demonstrates how Mughal art <strong>wasn't only political but also deeply sensual and celebratory</strong>.</p>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="gallery-slide">
+                <img src="../16.png" alt="Shah Jahan Court Scene">
+                <div class="text">
+                    <p>This grand painting from the Padshahnama illustrates Shah Jahan receiving his sons and minister Asaf Khan, highlighting the <strong>imperial visual rhetoric of the Mughal court</strong>. These works borrowed from <strong>Persian chronicles (Shahnama) but elevated Mughal authority with hyper-detailed realism, symmetrical architectural settings, and layered space</strong>. The emperor is enthroned under a gilded canopy, his raised posture and placement centralizing power, while the subjects approach in ordered procession—demonstrating the hierarchy and control essential to Mughal political ideology.</p>
+                
+                </div>
+            </div>
+        </div>
+
+        <button class="nav-btn prev-btn">←</button>
+        <button class="nav-btn next-btn">→</button>
+        
+        <div class="dots-nav">
+            <div class="dot active" data-slide="0"></div>
+            <div class="dot" data-slide="1"></div>
+            <div class="dot" data-slide="2"></div>
+            <div class="dot" data-slide="3"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.gallery-slide');
+            const dots = document.querySelectorAll('.dot');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            let currentSlide = 0;
+
+            // Handle hash-based navigation
+            function handleHash() {
+                const hash = window.location.hash;
+                if (hash.startsWith('#slide-')) {
+                    const slideNumber = parseInt(hash.replace('#slide-', ''));
+                    if (!isNaN(slideNumber) && slideNumber >= 0 && slideNumber < slides.length) {
+                        showSlide(slideNumber);
+                    }
+                }
+            }
+
+            function showSlide(index) {
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                });
+                dots.forEach(dot => {
+                    dot.classList.remove('active');
+                });
+                
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentSlide = index;
+                
+                // Update URL hash without triggering scroll
+                const hash = `#slide-${index}`;
+                if (window.location.hash !== hash) {
+                    history.replaceState(null, null, hash);
+                }
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showSlide(index);
+                });
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') nextSlide();
+                if (e.key === 'ArrowLeft') prevSlide();
+            });
+
+            // Handle initial hash and hash changes
+            handleHash();
+            window.addEventListener('hashchange', handleHash);
+        });
+    </script>
+    <!-- Add this to the <body> of each HTML page -->
+<div id="menu-toggle" class="menu-toggle">&#9776;</div>
+
+<!-- Side navigation -->
+<nav id="side-nav" class="side-nav">
+  <a href="#" class="close-btn" onclick="toggleMenu()">&times; Close</a>
+  <a href="/index.html">HOME</a>
+  <a href="/timeline/index.html">Timeline</a>
+  <a href="/symbolism/index.html">symbolism</a>
+  <a href="/colors/index.html">colors</a>
+  <a href="/collage.html">gallery</a>
+  <a href="/conclusion.html">conclusion</a>
+  <a href="/bibliography.html">bibliography</a>
+</nav>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+<style>
+  .menu-toggle {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 32px;
+    cursor: pointer;
+    z-index: 2000;
+  }
+
+  .side-nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1500;
+    top: 0;
+    right: 0;
+    background-color: #f8f8f8;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Helvetica', sans-serif;
+  }
+
+  .side-nav a {
+    padding: 16px;
+    text-decoration: none;
+    font-size: 32px;
+    color: #1b2a4e;
+    display: block;
+    transition: 0.2s;
+  }
+
+  .side-nav a:hover {
+    color: #a68f52;
+  }
+
+  .close-btn {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    display: none;
+  }
+</style>
+
+<script>
+  const menu = document.getElementById('side-nav');
+  const overlay = document.getElementById('overlay');
+
+  function toggleMenu() {
+    if (menu.style.width === '250px') {
+      menu.style.width = '0';
+      overlay.style.display = 'none';
+    } else {
+      menu.style.width = '250px';
+      overlay.style.display = 'block';
+    }
+  }
+
+  document.getElementById('menu-toggle').addEventListener('click', toggleMenu);
+</script>
+
+</body>
+</html> 

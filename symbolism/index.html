@@ -1,0 +1,157 @@
+<!-- symbolism/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Symbolism - Thesis Project</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background: white;
+      color: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-family: 'Futura', sans-serif;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      max-width: 700px;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    p span.red {
+      color: #8b0000;
+      font-weight: bold;
+    }
+
+    .explore-button {
+      font-size: 1.2rem;
+      text-decoration: underline;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #333;
+      transition: opacity 0.3s ease;
+    }
+
+    .explore-button:hover {
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <h1>symbolism in miniature paintings</h1>
+  <p>
+    Symbolism in Indian miniature paintings serves as a visual language that conveys
+    <span class="red">deeper meanings beyond the surface narrative</span>. Elements like the lotus symbolize spiritual purity and divine presence, while animals such as the peacock represent love and seasonal change, particularly the monsoon. Colors, too, carry layered meanings—blue denotes divinity and cosmic energy, while red symbolizes passion, power, and auspiciousness.
+  </p>
+  <a href="symbolism-intro/index.html">
+    <button class="explore-button">explore the art</button>
+  </a>
+  <!-- Add this to the <body> of each HTML page -->
+<div id="menu-toggle" class="menu-toggle">&#9776;</div>
+
+<!-- Side navigation -->
+<nav id="side-nav" class="side-nav">
+  <a href="#" class="close-btn" onclick="toggleMenu()">&times; Close</a>
+  <a href="/index.html">HOME</a>
+  <a href="/timeline/index.html">Timeline</a>
+  <a href="/symbolism/index.html">symbolism</a>
+  <a href="/colors/index.html">colors</a>
+  <a href="/collage.html">gallery</a>
+  <a href="/conclusion.html">conclusion</a>
+  <a href="/bibliography.html">bibliography</a>
+</nav>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+<style>
+  .menu-toggle {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 32px;
+    cursor: pointer;
+    z-index: 2000;
+  }
+
+  .side-nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1500;
+    top: 0;
+    right: 0;
+    background-color: #f8f8f8;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Helvetica', sans-serif;
+  }
+
+  .side-nav a {
+    padding: 16px;
+    text-decoration: none;
+    font-size: 32px;
+    color: #1b2a4e;
+    display: block;
+    transition: 0.2s;
+  }
+
+  .side-nav a:hover {
+    color: #a68f52;
+  }
+
+  .close-btn {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    display: none;
+  }
+</style>
+
+<script>
+  const menu = document.getElementById('side-nav');
+  const overlay = document.getElementById('overlay');
+
+  function toggleMenu() {
+    if (menu.style.width === '250px') {
+      menu.style.width = '0';
+      overlay.style.display = 'none';
+    } else {
+      menu.style.width = '250px';
+      overlay.style.display = 'block';
+    }
+  }
+
+  document.getElementById('menu-toggle').addEventListener('click', toggleMenu);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miniature Painting Timeline</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Helvetica Neue Light", "Helvetica Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 300;
+      background: #000;
+      color: white;
+    }
+
+    .timeline-container {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .timeline-line {
+      width: 90%;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.3);
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+
+    .timeline-dot {
+      width: 12px;
+      height: 12px;
+      background: white;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+
+    .dot-link:hover .timeline-dot {
+      transform: translateY(-50%) scale(1.5);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .timeline-label {
+      position: absolute;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.7);
+      text-align: center;
+      transform: translateX(-50%);
+      letter-spacing: 0.05em;
+      text-transform: lowercase;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .dot-link:hover .timeline-label {
+      color: white;
+    }
+
+    .label-top {
+      bottom: calc(50% + 30px);
+    }
+
+    .label-bottom {
+      top: calc(50% + 30px);
+    }
+
+    .dot-link {
+      text-decoration: none;
+    }
+
+    .timeline-title {
+      position: absolute;
+      left: 5%;
+      top: calc(50% + 80px);
+      font-size: 24px;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 200;
+      letter-spacing: 0.1em;
+      text-transform: lowercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="timeline-container">
+    <div class="timeline-line"></div>
+    <div class="timeline-title">Evolution of Miniature Art</div>
+
+    <a href="slider.html#slide1" class="dot-link">
+      <div class="timeline-dot" style="left: 15%;"></div>
+      <div class="timeline-label label-top" style="left: 15%;">10th century</div>
+    </a>
+
+    <a href="slider.html#slide2" class="dot-link">
+      <div class="timeline-dot" style="left: 35%;"></div>
+      <div class="timeline-label label-bottom" style="left: 35%;">mughal era</div>
+    </a>
+
+    <a href="slider.html#slide3" class="dot-link">
+      <div class="timeline-dot" style="left: 55%;"></div>
+      <div class="timeline-label label-bottom" style="left: 55%;">british raj</div>
+    </a>
+
+    <a href="slider.html#slide4" class="dot-link">
+      <div class="timeline-dot" style="left: 75%;"></div>
+      <div class="timeline-label label-top" style="left: 75%;">contemporary</div>
+    </a>
+  </div>
+  <!-- Add this to the <body> of each HTML page -->
+<div id="menu-toggle" class="menu-toggle">&#9776;</div>
+
+<!-- Side navigation -->
+<nav id="side-nav" class="side-nav">
+  <a href="#" class="close-btn" onclick="toggleMenu()">&times; Close</a>
+  <a href="/index.html">HOME</a>
+  <a href="/timeline/index.html">Timeline</a>
+  <a href="/symbolism/index.html">symbolism</a>
+  <a href="/colors/index.html">colors</a>
+  <a href="/collage.html">gallery</a>
+  <a href="/conclusion.html">conclusion</a>
+  <a href="/bibliography.html">bibliography</a>
+</nav>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+<style>
+  .menu-toggle {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 32px;
+    cursor: pointer;
+    z-index: 2000;
+  }
+
+  .side-nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1500;
+    top: 0;
+    right: 0;
+    background-color: #f8f8f8;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Helvetica', sans-serif;
+  }
+
+  .side-nav a {
+    padding: 16px;
+    text-decoration: none;
+    font-size: 32px;
+    color: #1b2a4e;
+    display: block;
+    transition: 0.2s;
+  }
+
+  .side-nav a:hover {
+    color: #a68f52;
+  }
+
+  .close-btn {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    display: none;
+  }
+</style>
+
+<script>
+  const menu = document.getElementById('side-nav');
+  const overlay = document.getElementById('overlay');
+
+  function toggleMenu() {
+    if (menu.style.width === '250px') {
+      menu.style.width = '0';
+      overlay.style.display = 'none';
+    } else {
+      menu.style.width = '250px';
+      overlay.style.display = 'block';
+    }
+  }
+
+  document.getElementById('menu-toggle').addEventListener('click', toggleMenu);
+</script>
+
+</body>
+</html>

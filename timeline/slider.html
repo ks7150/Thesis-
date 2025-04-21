@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miniature Painting Timeline</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .slider-container {
+      position: relative;
+      display: flex;
+      overflow: hidden;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .slider-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+      display: flex;
+      align-items: center;
+      padding: 40px 80px;
+      box-sizing: border-box;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .slide img {
+      max-height: 75vh;
+      width: auto;
+      max-width: 45%;
+      object-fit: contain;
+    }
+
+    .slide .text {
+      width: 45%;
+      padding: 40px;
+      box-sizing: border-box;
+      font-size: 18px;
+      line-height: 1.8;
+      letter-spacing: 0.02em;
+      font-weight: 300;
+    }
+
+    .centered-slide {
+      background-color: #966b3d;
+      color: white;
+      text-align: left;
+    }
+
+    .centered-slide .text {
+      padding-right: 0;
+    }
+
+    .centered-slide img {
+      width: auto;
+      max-width: 45%;
+      height: auto;
+      max-height: 75vh;
+      object-fit: contain;
+    }
+
+    .slide.mughal {
+      background-color: #5b5f38;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide.mughal::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('../27.png');
+      background-size: cover;
+      background-position: center;
+      filter: grayscale(100%) brightness(0.3);
+      z-index: 0;
+    }
+
+    .slide.mughal img {
+      display: none;
+    }
+
+    .slide.mughal .text {
+      position: relative;
+      z-index: 1;
+      width: 50%;
+      margin-left: 10%;
+      background: rgba(91, 95, 56, 0.7);
+      padding: 60px;
+      backdrop-filter: blur(5px);
+    }
+
+    .slide.british {
+      background-color: #416271;
+      color: white;
+      flex-direction: row-reverse;
+    }
+
+    .slide.contemporary {
+      background-color: #4b6c49;
+      color: white;
+    }
+
+    .double-img {
+      width: 45%;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .double-img img {
+      width: calc(50% - 10px);
+      height: auto;
+      max-height: 75vh;
+      object-fit: contain;
+    }
+
+    h2 {
+      font-size: 72px;
+      margin: 0 0 30px 0;
+      font-weight: 200;
+      text-transform: lowercase;
+      letter-spacing: 0.02em;
+      line-height: 1;
+    }
+
+    .explore-btn {
+      margin-top: 40px;
+      background: transparent;
+      color: white;
+      padding: 15px 30px;
+      font-weight: 300;
+      border: 1px solid white;
+      border-radius: 0;
+      cursor: pointer;
+      font-size: 16px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+
+    .explore-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Navigation Controls */
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      background: transparent;
+      border: none;
+      color: white;
+      padding: 20px;
+      cursor: pointer;
+      font-size: 24px;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .nav-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .prev-btn {
+      left: 0;
+    }
+
+    .next-btn {
+      right: 0;
+    }
+
+    .dots-nav {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 12px;
+      z-index: 10;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .dot.active {
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    p {
+      margin: 0 0 20px 0;
+    }
+
+    strong {
+      font-weight: 400;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider-container" id="slider">
+    <!-- Slide 1: 10th Century -->
+    <section class="slide centered-slide active" id="slide1">
+      <div class="text">
+        <h2>10th century</h2>
+        <p>
+          Miniature paintings from the Indian subcontinent first emerged during the
+          10th Century. These were produced on palm leaves until the introduction
+          of paper, and hence were small in size and portable. These often showed
+          stories from the Mahabharata & the Ramayana.
+        </p>
+      </div>
+      <img src="../25.png" alt="10th Century Manuscript" />
+    </section>
+
+    <!-- Slide 2: Mughal Era -->
+    <section class="slide mughal" id="slide2">
+      <img src="../27.png" alt="Mughal Painting" />
+      <div class="text">
+        <h2>mughal era</h2>
+        <p>
+          Mughal miniature painting, which flourished between the 16th and 19th
+          centuries under the patronage of the Mughal emperors, is a distinctive
+          fusion of Persian elegance, Indian vibrancy, and Central Asian precision.
+          These works were frequently produced in imperial karkhanas and depicted
+          themes ranging from royal court scenes, military conquests, and dynastic
+          portraits to intimate moments of leisure and devotion.
+        </p>
+        <p>
+          <strong>
+            Persian influence is evident in the floral margins, calligraphy, and
+            symmetrical layouts, while Indian influence shines through in the use of
+            local landscapes, textiles, and emotive expressions.
+          </strong>
+        </p>
+        <button class="explore-btn" onclick="window.location.href='mughal-gallery.html'">explore the art ⟶</button>
+      </div>
+    </section>
+
+    <!-- Slide 3: British Raj -->
+    <section class="slide british" id="slide3">
+      <div class="text">
+        <h2>british raj</h2>
+        <p>
+          Under British influence, miniature artists often adapted their work to suit
+          European tastes. This meant a move away from traditional religious, literary,
+          and courtly subjects toward more secular and ethnographic themes, including
+          landscapes, portraits of local people, and documentation of flora and fauna.
+        </p>
+        <p>
+          British rule profoundly altered the trajectory of Indian miniature art by
+          disrupting traditional systems of patronage, introducing Western techniques
+          and themes, and catalyzing both decline and later revival of the form.
+        </p>
+      </div>
+      <img src="../26.png" alt="British Raj Painting" />
+    </section>
+
+    <!-- Slide 4: Contemporary Art -->
+    <section class="slide contemporary" id="slide4">
+      <div class="double-img">
+        <img src="../23.png" alt="Contemporary 1" />
+        <img src="../24.png" alt="Contemporary 2" />
+      </div>
+      <div class="text">
+        <h2>contemporary</h2>
+        <p>
+          While some artists remain faithful to handmade techniques, others blend
+          miniature painting with digital art, sculpture, video, textiles, and
+          installation, expanding the genre's boundaries.
+        </p>
+      </div>
+    </section>
+
+    <!-- Navigation Controls -->
+    <button class="nav-btn prev-btn">←</button>
+    <button class="nav-btn next-btn">→</button>
+    <div class="dots-nav">
+      <div class="dot active" data-slide="0"></div>
+      <div class="dot" data-slide="1"></div>
+      <div class="dot" data-slide="2"></div>
+      <div class="dot" data-slide="3"></div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const slider = document.getElementById('slider');
+      const slides = document.querySelectorAll('.slide');
+      const dots = document.querySelectorAll('.dot');
+      const prevBtn = document.querySelector('.prev-btn');
+      const nextBtn = document.querySelector('.next-btn');
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        slides.forEach(slide => {
+          slide.classList.remove('active');
+        });
+        dots.forEach(dot => {
+          dot.classList.remove('active');
+        });
+        
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }
+
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+      }
+
+      function handleHash() {
+        const hash = window.location.hash;
+        if (hash) {
+          const slideNumber = parseInt(hash.replace('#slide', '')) - 1;
+          if (!isNaN(slideNumber) && slideNumber >= 0 && slideNumber < slides.length) {
+            currentSlide = slideNumber;
+            showSlide(currentSlide);
+          }
+        }
+      }
+
+      nextBtn.addEventListener('click', nextSlide);
+      prevBtn.addEventListener('click', prevSlide);
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          currentSlide = index;
+          showSlide(currentSlide);
+        });
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') nextSlide();
+        if (e.key === 'ArrowLeft') prevSlide();
+      });
+
+      // Handle initial hash and hash changes
+      handleHash();
+      window.addEventListener('hashchange', handleHash);
+    });
+  </script>
+  <!-- Add this to the <body> of each HTML page -->
+<div id="menu-toggle" class="menu-toggle">&#9776;</div>
+
+<!-- Side navigation -->
+<nav id="side-nav" class="side-nav">
+  <a href="#" class="close-btn" onclick="toggleMenu()">&times; Close</a>
+  <a href="/index.html">HOME</a>
+  <a href="/timeline/index.html">Timeline</a>
+  <a href="/symbolism/index.html">symbolism</a>
+  <a href="/colors/index.html">colors</a>
+  <a href="/collage.html">gallery</a>
+  <a href="/conclusion.html">conclusion</a>
+  <a href="/bibliography.html">bibliography</a>
+</nav>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+<style>
+  .menu-toggle {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 32px;
+    cursor: pointer;
+    z-index: 2000;
+  }
+
+  .side-nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1500;
+    top: 0;
+    right: 0;
+    background-color: #f8f8f8;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Helvetica', sans-serif;
+  }
+
+  .side-nav a {
+    padding: 16px;
+    text-decoration: none;
+    font-size: 32px;
+    color: #1b2a4e;
+    display: block;
+    transition: 0.2s;
+  }
+
+  .side-nav a:hover {
+    color: #a68f52;
+  }
+
+  .close-btn {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    display: none;
+  }
+</style>
+
+<script>
+  const menu = document.getElementById('side-nav');
+  const overlay = document.getElementById('overlay');
+
+  function toggleMenu() {
+    if (menu.style.width === '250px') {
+      menu.style.width = '0';
+      overlay.style.display = 'none';
+    } else {
+      menu.style.width = '250px';
+      overlay.style.display = 'block';
+    }
+  }
+
+  document.getElementById('menu-toggle').addEventListener('click', toggleMenu);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!-- symbolism/symbolism-intro/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Symbolism Slider</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: white;
+      color: #111;
+      overflow: hidden;
+    }
+
+    .swiper {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      padding: 2rem 4vw;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .swiper-slide.bg-overlay {
+      position: relative;
+    }
+
+    .swiper-slide.bg-overlay::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      filter: grayscale(100%) brightness(0.4);
+      z-index: 1;
+    }
+
+    /* Background for slide 3 */
+    .swiper-slide:nth-child(3).bg-overlay::before {
+      background: url('../../11.png') center/cover no-repeat;
+    }
+
+    /* Background for slide 4 */
+    .swiper-slide:nth-child(4).bg-overlay::before {
+      background: url('../../12.png') center/cover no-repeat;
+    }
+
+    .swiper-slide.bg-overlay .image-wrapper,
+    .swiper-slide.bg-overlay .art-text {
+      position: relative;
+      z-index: 2;
+    }
+
+    .image-wrapper {
+      max-width: 40vw;
+      max-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      padding: 1rem;
+    }
+
+    .art-image {
+      width: 100%;
+      height: auto;
+      max-height: 70vh;
+      object-fit: contain;
+    }
+
+    .art-text {
+      width: 40vw;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .swiper-slide.bg-overlay .art-text {
+      position: relative;
+      z-index: 2;
+      color: white;
+    }
+
+    .swiper-slide.bg-overlay .art-text strong {
+      color: white;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 45px;
+      height: 45px;
+      background: #416271;
+      color: white;
+      border-radius: 50%;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      font-size: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <div class="image-wrapper">
+          <img src="../../22.png" alt="Slide 1" class="art-image" />
+        </div>
+        <div class="art-text">
+          
+Set during the onset of the monsoon, the swirling clouds, peacocks, and lush foliage reflect the heightened emotions of love and desire. At its heart, the painting shows Krishna and Radha in an intimate moment, symbolizing divine love and romantic fulfillment, while the solitary female figure below suggests separation or inner yearning. The presence of a sage performing rituals in the background introduces a spiritual dimension, contrasting worldly love with ascetic detachment. The lotus-filled waters below signify purity blossoming amidst emotional turbulence, making the entire scene a poetic meditation on love, nature, and the rhythms of the seasons.
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <div class="image-wrapper">
+          <img src="../../10.png" alt="Slide 2" class="art-image" />
+        </div>
+        <div class="art-text">
+          
+This illustration,from a Persian or Indo-Persian manuscript , is a profound allegory of spiritual journey and unity, conveyed through an assembly of diverse birds. Each bird represents a different human flaw or virtue, and together they symbolize the diversity of souls in search of divine truth. The dense, vibrant composition filled with peacocks, cranes, parrots, and nightingales reflects the richness of creation, while the harmonious coexistence of these varied species gestures toward universal unity and the interconnectedness of all beings.
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide bg-overlay">
+        <div class="image-wrapper">
+          <img src="../../11.png" alt="Slide 3" class="art-image" />
+        </div>
+        <div class="art-text">
+          This serene and symbolic painting portrays the cosmic moment of Vishnu's yogic slumber (Yoga Nidra) on the serpent Ananta (Shesha), floating on the primordial ocean, a theme central to Hindu cosmology. Vishnu, shown with blue skin and regal adornments, reclines on the coiled serpent, signifying infinite time and eternal presence. Beside him sits Lakshmi, the goddess of wealth and his consort, gently massaging his feet—a gesture of devotion and harmony. From Vishnu's navel grows a lotus, on which sits the four-headed Brahma, the god of creation, emphasizing that creation itself emerges from divine stillness. The surrounding lotus blossoms and tranquil waters represent the unfolding of the cosmos from a single divine source. 
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="swiper-slide bg-overlay">
+        <div class="image-wrapper">
+          <img src="../../12.png" alt="Slide 4" class="art-image" />
+        </div>
+        <div class="art-text">
+          This painting represents a musical mode personified as a noblewoman, surrounded by a symbolic natural setting. The central female figure, poised with a veena and bow, is both a musician and a huntress, suggesting a fusion of artistic refinement and assertive strength. Her interaction with the deer—gentle creatures often symbolic of love and sensitivity—highlights a moment of harmony between human and nature, evoking the rasa (emotional essence) of longing or romantic anticipation. The vivid red background, often used in Indian miniature art to symbolize passion or intensity, contrasts with the lush green foreground, reinforcing the emotional duality of serenity and inner turmoil. The birds in flight above her and the ducks among lotuses in the water below further enhance the lyrical atmosphere, connecting visual storytelling with the mood of a raga. This work is a perfect synthesis of music, poetry, and painting, where every element—from flora and fauna to posture and palette—contributes to evoking a specific emotional world.
+          <div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      loop: false
+    });
+  </script>
+</body>
+</html>
