@@ -134,32 +134,9 @@ body {
     box-shadow: 0 4px 24px rgba(0,0,0,0.15);
 }
 
-.yellow-page {
+/* .yellow-page {
     min-height: 100vh;
-    background: #FFFDE7;
-}
-
-.yellow-landing-layout {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    background: #FFFDE7;
-}
-
-.yellow-image-container {
-    flex: 0 0 50vh;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.yellow-landing-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-    display: block;
+    background: #FFD600;
 }
 
 .yellow-landing-layout .explore-button-container {
@@ -200,7 +177,7 @@ body {
     border-radius: 1rem;
     box-shadow: 0 4px 24px rgba(0,0,0,0.10);
     display: block;
-}
+} */
 
 .circle-arrow-btn {
     display: flex;
@@ -234,7 +211,7 @@ body {
     box-shadow: 0 4px 16px rgba(255,214,0,0.25);
 }
 
-.yellow-intro-text {
+/* .yellow-intro-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -256,5 +233,33 @@ body {
 .yellow-intro-text p {
     color: #333;
     font-size: 1.2rem;
-}
+} */
 
+/* 🌟 New Landing Text for Yellow */
+.yellow-page {
+    background-color: #e2a900;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .yellow-text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 60px;
+    text-align: center;
+  }
+  
+  .yellow-heading {
+    font-family: 'Oswald', 'Helvetica Neue', sans-serif;
+    font-size: 2vw;
+    font-weight: 300;
+    line-height: 1.6;
+    color: white;
+    letter-spacing: 0.5px;
+    max-width: 90vw;
+  }
+  

@@ -1,17 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thesis Project</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thesis Project</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .main-image-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .navigation-dots {
+      position: absolute;
+      bottom: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 40px;
+      padding: 20px;
+    }
+
+    .nav-dot {
+      width: 50px;
+      height: 50px;
+      background-color: #8b0000;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(139, 0, 0, 0.2);
+    }
+
+    .nav-dot:hover {
+      transform: scale(1.15) translateY(-5px);
+      background-color: #a00000;
+      box-shadow: 0 8px 25px rgba(139, 0, 0, 0.4);
+    }
+
+    .nav-dot::before {
+      content: attr(data-label);
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%) scale(0.9);
+      background: rgba(0, 0, 0, 0.85);
+      color: white;
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border-radius: 20px;
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      white-space: nowrap;
+      pointer-events: none;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-dot::after {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%) scale(0.9);
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 8px solid rgba(0, 0, 0, 0.85);
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .nav-dot:hover::before {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+      top: -70px;
+    }
+
+    .nav-dot:hover::after {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+      top: -25px;
+    }
+
+    /* Subtle glow effect for dots */
+    @keyframes subtle-glow {
+      0%, 100% {
+        box-shadow: 0 4px 15px rgba(139, 0, 0, 0.2);
+      }
+      50% {
+        box-shadow: 0 4px 25px rgba(139, 0, 0, 0.3);
+      }
+    }
+
+    .nav-dot {
+      animation: subtle-glow 3s infinite;
+    }
+
+    .nav-dot:nth-child(1) { animation-delay: 0s; }
+    .nav-dot:nth-child(2) { animation-delay: 0.75s; }
+    .nav-dot:nth-child(3) { animation-delay: 1.5s; }
+    .nav-dot:nth-child(4) { animation-delay: 2.25s; }
+  </style>
 </head>
 <body class="landing-page">
-    <div class="main-image-container">
-        <div class="navigation-buttons">
-            <a href="colors/" class="nav-button right-button"></a>
-        </div>
+  <div class="main-image-container">
+    <div class="navigation-dots">
+      <a href="timeline/" class="nav-dot" data-label="Timeline"></a>
+      <a href="symbolism/index.html" class="nav-dot" data-label="Symbolism"></a>
+      <a href="colors/index.html" class="nav-dot" data-label="Colors"></a>
+      <a href="collage.html" class="nav-dot" data-label="Gallery"></a>
     </div>
+  </div>
 </body>
 </html>
-
