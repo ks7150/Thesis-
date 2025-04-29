@@ -18,6 +18,25 @@
       overflow: hidden;
     }
 
+    .back-btn {
+      position: absolute;
+      top: 40px;
+      left: 40px;
+      z-index: 10;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 12px 24px;
+      cursor: pointer;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      font-weight: 300;
+      font-family: "Helvetica Neue Light", "Helvetica Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  } 
+
+
     .swiper {
       width: 100vw;
       height: 100vh;
@@ -127,6 +146,7 @@
 </head>
 
 <body>
+  <button class="back-btn" onclick="window.location.href='/Thesis-website_code/colors-introduction-page/index.html'">← Back to Colors</button>
   <div class="swiper">
     <div class="swiper-wrapper">
 
@@ -190,12 +210,12 @@
 <nav id="side-nav" class="side-nav">
   <a href="#" class="close-btn" onclick="toggleMenu()">&times; Close</a>
   <a href="/Thesis-website_code/index.html">HOME</a>
+  <a href="/Thesis-website_code/conclusion.html">About</a>
   <a href="/Thesis-website_code/timeline/index.html">Timeline</a>
-  <a href="/Thesis-website_code/symbolism/index.html">symbolism</a>
-  <a href="/Thesis-website_code/colors/index.html">colors</a>
-  <a href="/Thesis-website_code/collage.html">gallery</a>
-  <a href="/Thesis-website_code/conclusion.html">conclusion</a>
-  <a href="/Thesis-website_code/bibliography.html">bibliography</a>
+  <a href="/Thesis-website_code/symbolism/index.html">Symbolism</a>
+  <a href="/Thesis-website_code/colors/index.html">Colors</a>
+  <a href="/Thesis-website_code/collage.html">Gallery</a>
+  <a href="/Thesis-website_code/bibliography.html">Bibliography</a>
 </nav>
 
 <!-- Overlay -->

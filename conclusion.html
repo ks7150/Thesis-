@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Indian Miniature Art Project</title>
+  <link rel="stylesheet" href="miniature-art.css"/>
+</head>
+<body>
+  <main class="content">
+    <section class="about">
+      <h2>About this project</h2>
+      <p>
+        This project explores how Indian Miniature Art can be experienced, understood, and appreciated in a global context.
+        Built as part of my thesis for the Master of Science in Integrated Design & Media at NYU, it investigates how storytelling
+        through Indian art, especially mythology and folklore, has evolved across time and geographies. Taking insights from interviews,
+        workshops, and museum studies, this research explores how cultural narratives are preserved, altered, and interpreted outside India.
+        This website acts as a digital exhibition or an educational guide, offering interactive pathways to explore the symbolism, colors,
+        and themes embedded in Indian Miniature Art and how the art form evolved with time and context. The goal of this is to help bridge
+        gaps in cultural literacy and facilitate meaningful engagement, especially for audiences unfamiliar with the nuances of the tradition,
+        making this rich storytelling practice accessible, contextual, and culturally rooted.
+      </p>
+    </section>
+
+    <p class="highlight">
+      Indian art can be decoded through a layered lens of color symbolism, narrative themes, iconographic elements, and evolving time periods—
+      each offering insight into its cultural, spiritual, and historical context.
+    </p>
+
+    <section class="formula-box">
+      <h3>Color + Theme + Symbol + Time Period = Cultural Narrative</h3>
+      <ul>
+        <li><strong>Color</strong> reveals emotion or divinity</li>
+        <li><strong>Theme</strong> points to the central story (mythological tale, court life, daily rituals)</li>
+        <li><strong>Symbol</strong> indicates hidden meanings</li>
+        <li><strong>Time Period</strong> shapes the style and influence</li>
+      </ul>
+    </section>
+
+    <section class="question">
+      <h3>Should Indian Miniature Art evolve in style and presentation to enhance its accessibility and appeal to global audiences while preserving its traditional essence</h3>
+      <p>
+        This project affirms that the global representation of Indian Art must evolve. It must move beyond surface-level appreciation,
+        where it is often exoticized or reduced to visual ornamentation, and instead offer viewers tools to access the layered narratives
+        and meanings embedded within each piece.<br><br>
+        Ultimately, this site is not just a digital gallery—it is a reimagined storytelling space. It bridges cultural divides by way of
+        supplying accessible entry points right into a complicated creative tradition, aligning with the thesis’s principal intention:
+        while maintaining authenticity and broader, deeper, and greater inclusive engagement with Indian Miniature Art on an international level.
+      </p>
+    </section>
+
+    <!-- <div class="explore-button-container">
+        <a href="/Thesis-website_code/index.html" class="explore-button">explore the art</a>
+      </div> -->
+  </main>
+
+  <!-- Side Navigation -->
+<div id="menu-toggle" class="menu-toggle">&#9776;</div>
+<nav id="side-nav" class="side-nav">
+  <a href="#" class="close-btn" onclick="toggleMenu()">&times; Close</a>
+  <a href="/Thesis-website_code/index.html">HOME</a>
+  <a href="/Thesis-website_code/conclusion.html">About</a>
+  <a href="/Thesis-website_code/timeline/index.html">Timeline</a>
+  <a href="/Thesis-website_code/symbolism/index.html">Symbolism</a>
+  <a href="/Thesis-website_code/colors/index.html">Colors</a>
+  <a href="/Thesis-website_code/collage.html">Gallery</a>
+  <a href="/Thesis-website_code/bibliography.html">Bibliography</a>
+</nav>
+<div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+<script>
+  const menu = document.getElementById('side-nav');
+  const overlay = document.getElementById('overlay');
+
+  function toggleMenu() {
+    if (menu.style.width === '250px') {
+      menu.style.width = '0';
+      overlay.style.display = 'none';
+    } else {
+      menu.style.width = '250px';
+      overlay.style.display = 'block';
+    }
+  }
+
+  document.getElementById('menu-toggle').addEventListener('click', toggleMenu);
+</script>
+</body>
+</html>
