@@ -7,6 +7,45 @@
   <title>Symbolism Slider</title>
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <style>
+
+    .menu-toggle {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      font-size: 32px;
+      cursor: pointer;
+      z-index: 2000;
+    }
+  
+    .side-nav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1500;
+      top: 0;
+      right: 0;
+      background-color: #f8f8f8;
+      overflow-x: hidden;
+      transition: 0.4s;
+      padding-top: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Helvetica', sans-serif;
+    }
+  
+    .side-nav a {
+      padding: 16px;
+      text-decoration: none;
+      font-size: 32px;
+      color: #1b2a4e;
+      display: block;
+      transition: 0.2s;
+    }
+  
+    .side-nav a:hover {
+      color: #a68f52;
+    }
     body {
       margin: 0;
       font-family: 'Helvetica Neue', sans-serif;
@@ -118,6 +157,21 @@
   </style>
 </head>
 <body>
+
+
+  <div id="menu-toggle" class="menu-toggle">&#9776;</div>
+
+<!-- Side navigation -->
+<nav id="side-nav" class="side-nav">
+  <a href="#" class="close-btn" onclick="toggleMenu()">&times; Close</a>
+  <a href="/Thesis-website_code/index.html">HOME</a>
+  <a href="/Thesis-website_code/conclusion.html">About</a>
+  <a href="/Thesis-website_code/timeline/index.html">Timeline</a>
+  <a href="/Thesis-website_code/symbolism/index.html">symbolism</a>
+  <a href="/Thesis-website_code/colors/index.html">colors</a>
+  <a href="/Thesis-website_code/collage.html">gallery</a>
+  <a href="/Thesis-website_code/bibliography.html">bibliography</a>
+</nav>
   <div class="swiper">
     <div class="swiper-wrapper">
 
@@ -180,6 +234,23 @@ This illustration,from a Persian or Indo-Persian manuscript , is a profound alle
       },
       loop: false
     });
+
+    
+      const menu = document.getElementById('side-nav');
+      const overlay = document.getElementById('overlay');
+    
+      function toggleMenu() {
+        if (menu.style.width === '250px') {
+          menu.style.width = '0';
+          overlay.style.display = 'none';
+        } else {
+          menu.style.width = '250px';
+          overlay.style.display = 'block';
+        }
+      }
+    
+      document.getElementById('menu-toggle').addEventListener('click', toggleMenu);
+    
   </script>
 </body>
 </html>
